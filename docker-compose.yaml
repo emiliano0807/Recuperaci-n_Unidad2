@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  api1:
+    build: ./app
+    container_name: api1
+    restart: always
+
+  api2:
+    build: ./app
+    container_name: api2
+    restart: always
+
+  proxy:
+    image: nginx:latest
+    container_name: reverse_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - api1
+      - api2
+    restart: always
