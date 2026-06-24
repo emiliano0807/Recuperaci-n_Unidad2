@@ -9,7 +9,7 @@ Ya sea que clones el repositorio o como obtengas el repositorio tenlo en tu comp
 Lo que nececitas es tener docker, si tienes docker, solo tienes que poner este comando
 
 ```bash
-    docker compose up -d
+docker compose up -d
 ```
 
 o
